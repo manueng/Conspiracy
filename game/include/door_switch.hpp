@@ -18,18 +18,18 @@ public:
     void init();
     Animation * getAnimation();
     void animate();
-    void stopAnimation();
-    bool isPressed();
-    void playEffect();
-    void stopEffect();
-    double getHackingBarPercent();
-    void resetHackingProgress();
+    void Stop_Animation();
+    bool Is_Pressed();
+    void Play_Effect();
+    void Stop_Effect();
+    double Get_Hacking_Bar_Percent();
+    void Reset_Hacking_Progress();
 protected:
-    bool pressed;
-    Animation* animator;
+    bool Pressed;
+    Animation* Animator;
 private:
-    Audio *hacking_effect;
-    ProgressBar *hacking_bar;
+    Audio *Hacking_Effect;
+    Progress_Bar *Hacking_Bar;
 };
 
 #endif
