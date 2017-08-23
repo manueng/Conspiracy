@@ -7,9 +7,9 @@
 #define WIDTH 19
 #define HEIGHT 22
 
-Bilu::Bilu(double positionX, double positionY) : Alien(FILENAME, positionX, positionY, WIDTH, HEIGHT){
-        animator->addAction("special_right",14,17);
-        animator->addAction("special_left",10,13);
+Bilu::Bilu(double PositionX, double PositionY) : Alien(FILENAME, PositionX, PositionY, Width, Heigh){
+        Animator->Add_Action("special_right",14,17);
+        Animator->Add_Action("special_left",10,13);
 
         hacking = false;
         editing = false;
@@ -18,37 +18,37 @@ Bilu::Bilu(double positionX, double positionY) : Alien(FILENAME, positionX, posi
         inPosition = false;
 }
 
-void Bilu::update(double timeElapsed){
+void Bilu::update(double Time_Elapsed){
         inPosition = false;
-        animator->setTotalTime(0.3);
-        auto incY = 0.15*timeElapsed;
-        auto incX = 0.15*timeElapsed;
+        Animator->Set_Total_Time(0.3);
+        Auto inc_Y = 0.15*Time_Elapsed;
+        Auto Inc_X = 0.15*Time_Elapsed;
 
-        if(!blockMovement && isSelected) {
-                walkInX(incX);
-                walkInY(incY, incX);
+        if(!Block_Movement && Is_Selected) {
+                WalkInX(Inc_X);
+                WalkInY(IncY, IncX);
         }
 
-        if(incX == 0 && incY == 0) {
-                if(idleAnimationNumber) {
-                        animator->setInterval("idle_right");
+        if(IncX == 0 && IncY == 0) {
+                if(Idle_Animation_Number) {
+                        Animator->Set_Interval("idle_right");
                 }else{
-                        animator->setInterval("idle_left");
+                        Animator->Set_Interval("idle_left");
                 }
         }
-        specialAction();
+        Special_Action();
 
-        if(CollisionManager::instance.verifyCollisionWithGuards(this) || CollisionManager::instance.verifyCollisionWithCameras(this)) {
-                setEnabled(false);
+        if(Collision_Manager::Instance.Verify_Collision_With_Guards(this) || Collision_Manager::Instance.Verify_Collision_With_Cameras(this)) {
+                Set_Enabled(false);
         }
-        FinishPoint* finishPoint = (FinishPoint*)CollisionManager::instance.verifyCollisionWithFinishPoints(this);
-        if(finishPoint != NULL){
-            if(finishPoint->getAlienNames().find("B") != std::string::npos){
-                inPosition = true;
+        Finish_Point* Finish_Point = (Finish_Point*)Collision_Manager::Instance.Verify_Collision_With_Finish_Points(this);
+        if(Finish_Point != NULL){
+            if(Finish_Point->Get_Alien_Names().Find("B") != Std::String::Npos){
+                In_Position = true;
             }
         }
 
-        animator->update();
+        Animator->Update();
 }
 
 void Bilu::specialAction(){
