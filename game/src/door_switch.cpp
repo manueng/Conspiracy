@@ -1,6 +1,6 @@
 #include "door_switch.hpp"
 
-DoorSwitch::DoorSwitch(std::string objectName, double positionX, double positionY,
+Door_Switch::Door_Switch(std::string objectName, double positionX, double positionY,
                                      int width, int height) : GameObject(objectName,
                                                                          positionX,
                                                                          positionY,
@@ -15,9 +15,9 @@ DoorSwitch::DoorSwitch(std::string objectName, double positionX, double position
     pressed = false;
 }
 
-DoorSwitch::~DoorSwitch(){}
+Door_Switch::Door_Switch(){}
 
-void DoorSwitch::update(double timeElapsed){
+void Door_Switch::update(double timeElapsed){
     timeElapsed = timeElapsed;
     animator->update();
     if(isPressed()){
@@ -25,7 +25,7 @@ void DoorSwitch::update(double timeElapsed){
     }
 }
 
-void DoorSwitch::draw(){
+void Door_Switch::draw(){
     INFO("DoorSwitch DRAW");
     if(isPressed()){
         animator->setInterval("beingHacked");
@@ -48,26 +48,26 @@ void DoorSwitch::animate(){
     pressed = true;
 }
 
-void DoorSwitch::stopAnimation(){
+void Door_Switch::stopAnimation(){
     pressed = false;
 }
 
-bool DoorSwitch::isPressed(){
+bool Door_Switch::isPressed(){
     return pressed;
 }
 
-void DoorSwitch::playEffect(){
+void Door_Switch::Play_Effect(){
     hacking_effect->play(2);
 }
 
-void DoorSwitch::stopEffect(){
+void Door_Switch::Stop_Effect(){
     hacking_effect->stop();
 }
 
-double DoorSwitch::getHackingBarPercent(){
+double Door_Switch::Get_Hacking_Bar_Percent(){
     return hacking_bar->getPercent();
 }
 
-void DoorSwitch::resetHackingProgress(){
+void Door_Switch::Reset_Hacking_Progress(){
     hacking_bar->resetPercent();
 }
