@@ -5,18 +5,18 @@
 
 class Bilu: public Alien{
 public:
-    Bilu(double positionX, double positionY);
-    void draw();
-    void update(double timeElapsed);
+    Bilu(double PositionX, double positionY);
+    void Draw();
+    void Update(double timeElapsed);
 
 protected:
-    void specialAction();
+    void Special_Action();
 
 private:
-    bool hacking;
-    bool editing;
-    bool lastAction;
-    void setSpecialActionAnimator();
+    bool Hacking;
+    bool Editing;
+    bool LastAction;
+    void SetSpecialActionAnimator();
 };
 
 #endif
