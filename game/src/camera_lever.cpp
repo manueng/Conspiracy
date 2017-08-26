@@ -6,9 +6,9 @@ using namespace engine;
 #define WIDTH 20
 #define HEIGHT 20
 
-CameraLever::CameraLever(double positionX, double positionY, std::string direction) : GameObject(FILENAME,positionX,positionY,
-                                                                     WIDTH, HEIGHT){
-    animator = new Animation(FILENAME, 1, 3, 0.1);
+CameraLever::CameraLever(double position_x, double position_y, std::string direction) : GameObject(file_name,position_x,position_y,
+                                                                     width, heigh){
+    animator = new Animation(file_name, 1, 3, 0.1);
     animator->addAction("up", 2,2);
     animator->addAction("mid",1,1);
     animator->addAction("down", 0,0);
@@ -23,8 +23,8 @@ void CameraLever::draw(){
     animator->draw_collider(getPositionX(), getPositionY(), getWidth(), getHeight());
 }
 
-void CameraLever::update(double timeElapsed){
-    timeElapsed = timeElapsed;
+void CameraLever::update(double time_elapsed){
+    time_elapsed = time_elapsed;
     animator->update();
 }
 
