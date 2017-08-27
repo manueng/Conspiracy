@@ -28,8 +28,8 @@ protected:
     bool pressed;
     Animation* animator;
 private:
-    Audio *hacking_effect;
-    ProgressBar *hacking_bar;
+    Audio *hackingEffect;
+    ProgressBar *hackingBar;
 };
 
 #endif
