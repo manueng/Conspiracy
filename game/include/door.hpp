@@ -24,7 +24,7 @@ public:
 protected:
     Animation* animator;
 private:
-    Audio *door_effect;
+    Audio *doorEffect;
     bool open;
     std::string side;
 };
