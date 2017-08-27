@@ -23,8 +23,8 @@ public:
     void changeState(int state);
     FieldOfVision* getFieldOfVision();
 private:
-    void initializeVision(int p_range, int p_angleOfVision, std::string direction);
-    void initializeAnimator(std::string filename);
+    void initializeVision(int p_range, int pAngleOfVision, std::string direction);
+    void initializeAnimator(std::string fileName);
     int range;
     bool turnedOn;
     std::vector<int> angles;
