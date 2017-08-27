@@ -6,8 +6,8 @@ using namespace engine;
 #define width 14
 #define heigh 16
 #define adjust_x 10
-CameraSwitch::CameraSwitch(double position_x, double position_y, std::string direction) : GameObject(file_name,position_x - adjust_x,position_y - adjust_x,
-                                                                     width+adjust_x*2, heigh+adjust_x*2){
+CameraSwitch::CameraSwitch(double positionX, double positionY, std::string direction) : GameObject(fileName,positionX - adjustX,positionY - adjustX,
+                                                                     width+adjustX*2, heigh+adjustX*2){
     animator = new Animation(file_name, 1, 2, 0.1);
     switchEfffect = new Audio("assets/sounds/TURNOFFCAMERA.wav", "EFFECT", 128);
 
@@ -23,8 +23,8 @@ void CameraSwitch::draw(){
     animator->draw_collider(getPositionX(), getPositionY(), getWidth(), getHeight());
 }
 
-void CameraSwitch::update(double time_elapsed){
-    time_elapsed = time_elapsed;
+void CameraSwitch::update(double timeElapsed){
+    timeElapsed = timeElapsed;
     animator->update();
 }
 
