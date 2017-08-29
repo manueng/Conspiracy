@@ -15,11 +15,11 @@ public:
     ~Paper();
     void update(double timeElapsed);
     void draw();
-    void init();
+    void Init();
     Animation * getAnimation();
     void animate();
-    void stopAnimation();
-    bool isEdited();
+    void stop_Animation();
+    bool Is_Edited();
     double getEditingBarPercent();
     void resetEditingProgress();
     void playEffect();
@@ -28,7 +28,7 @@ protected:
     Animation* animator;
     ProgressBar *editing_bar;
     bool edited;
-    bool isBeingEdited;
+    bool Is_Being_Edited;
     Audio* paperEditingSound;
 };
 
