@@ -17,7 +17,7 @@ public:
     void unload();
 private:
     Timer* sceneTimer;
-    Sprite* background;
+    Sprite* backGround;
     int newNextScene;
     std::vector<std::pair<int, GameObject*>> gameObjectsList;
 };

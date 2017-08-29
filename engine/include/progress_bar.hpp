@@ -22,7 +22,7 @@ namespace engine{
     private:
         double percent;
         double progressIncrement;
-        int pw;
+        int pW;
         int px;
         SDL_Rect *backRect;
         SDL_Rect *frontRect;

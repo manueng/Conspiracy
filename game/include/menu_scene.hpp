@@ -31,7 +31,7 @@ private:
     Color * notSelect;
     Audio * buttonEffect;
     Audio * selectEffect;
-    Audio * backgroundMusic;
+    Audio * backGroundMusic;
 };
 
 #endif
